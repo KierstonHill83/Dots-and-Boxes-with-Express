@@ -1,0 +1,156 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+  <div class="container">
+      <div class="row col-xs-8 col-sm-offset-2">
+        <h1>Dots and Boxes Game</h1>
+        <br>
+        <div class="turn">Current Turn: <span class="turn" id="next-turn">Player 1</span></div>
+        <br><br>
+        <table class="table">
+
+          <tr id="hor1-row">
+            <td class="h1-border"></td>
+            <td id="1" class="h1-border2"></td>
+            <td class="h1-border"></td>
+            <td id="2" class="h1-border2"></td>
+            <td class="h1-border"></td>
+            <td id="3" class="h1-border2"></td>
+            <td class="h1-border"></td>
+            <td id="4" class="h1-border2"></td>
+            <td class="h1-border"></td>
+          </tr>
+
+          <tr id="hor2-row">
+            <td id="5" class="hor-border"></td>
+            <td id="box0" class="hor-border2"></td>
+            <td id="7" class="hor-border"></td>
+            <td id="box1" class="hor-border2"></td>
+            <td id="9" class="hor-border"></td>
+            <td id="box2" class="hor-border2"></td>
+            <td id="11" class="hor-border"></td>
+            <td id="box3" class="hor-border2"></td>
+            <td id="13" class="hor-border"></td>
+          </tr>
+
+          <tr id="hor1-row">
+            <td class="h1-border"></td>
+            <td id="14" class="h1-border2"></td>
+            <td class="h1-border"></td>
+            <td id="15" class="h1-border2"></td>
+            <td class="h1-border"></td>
+            <td id="16" class="h1-border2"></td>
+            <td class="h1-border"></td>
+            <td id="17" class="h1-border2"></td>
+            <td class="h1-border"></td>
+          </tr>
+
+          <tr id="hor2-row">
+            <td id="18" class="hor-border"></td>
+            <td id="box4" class="hor-border2"></td>
+            <td id="20" class="hor-border"></td>
+            <td id="box5" class="hor-border2"></td>
+            <td id="22" class="hor-border"></td>
+            <td id="box6" class="hor-border2"></td>
+            <td id="24" class="hor-border"></td>
+            <td id="box7" class="hor-border2"></td>
+            <td id="26" class="hor-border"></td>
+          </tr>
+
+          <tr id="hor1-row">
+            <td class="h1-border"></td>
+            <td id="27" class="h1-border2"></td>
+            <td class="h1-border"></td>
+            <td id="28" class="h1-border2"></td>
+            <td class="h1-border"></td>
+            <td id="29" class="h1-border2"></td>
+            <td class="h1-border"></td>
+            <td id="30" class="h1-border2"></td>
+            <td class="h1-border"></td>
+          </tr>
+
+          <tr id="hor2-row">
+            <td id="31" class="hor-border"></td>
+            <td id="box8" class="hor-border2"></td>
+            <td id="33" class="hor-border"></td>
+            <td id="box9" class="hor-border2"></td>
+            <td id="35" class="hor-border"></td>
+            <td id="box10" class="hor-border2"></td>
+            <td id="37" class="hor-border"></td>
+            <td id="box11" class="hor-border2"></td>
+            <td id="39" class="hor-border"></td>
+          </tr>
+
+          <tr id="hor1-row">
+            <td class="h1-border"></td>
+            <td id="40" class="h1-border2"></td>
+            <td class="h1-border"></td>
+            <td id="41" class="h1-border2"></td>
+            <td class="h1-border"></td>
+            <td id="42" class="h1-border2"></td>
+            <td class="h1-border"></td>
+            <td id="43" class="h1-border2"></td>
+            <td class="h1-border"></td>
+          </tr>
+
+          <tr id="hor2-row">
+            <td id="44" class="hor-border"></td>
+            <td id="box12" class="hor-border2"></td>
+            <td id="46" class="hor-border"></td>
+            <td id="box13" class="hor-border2"></td>
+            <td id="48" class="hor-border"></td>
+            <td id="box14" class="hor-border2"></td>
+            <td id="50" class="hor-border"></td>
+            <td id="box15" class="hor-border2"></td>
+            <td id="52" class="hor-border"></td>
+          </tr>
+
+          <tr id="hor1-row">
+            <td class="h1-border"></td>
+            <td id="53" class="h1-border2"></td>
+            <td class="h1-border"></td>
+            <td id="54" class="h1-border2"></td>
+            <td class="h1-border"></td>
+            <td id="55" class="h1-border2"></td>
+            <td class="h1-border"></td>
+            <td id="56" class="h1-border2"></td>
+            <td class="h1-border"></td>
+          </tr>
+        </table>
+
+        <br>
+        <div class="col-sm-6">
+          <h2>Player 1</h2>
+          <br>
+            <div class="score-box col-sm-1 col-sm-offset-5">
+              <p id="score0">0</p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+          <h2>Player 2</h2>
+          <br>
+            <div class="score-box col-sm-1 col-sm-offset-5">
+              <p id="score1">0</p>
+            </div>
+        </div>
+      </div> <!-- close row -->
+
+      <div class="row col-sm-2 col-sm-offset-5 row-centered">
+        <br><br>
+        <div aria-label="...">
+          <button type="button" id="rules" class="btn-lg btn-success" data-container="body" data-toggle="popover" data-placement="top" data-content="Starting with an empty grid of dots, players take turns, adding a single horizontal or vertical line between two unjoined adjacent dots. A player who completes the fourth side of a 1X1 box earns one point and takes another turn. The game ends when no more lines can be placed. The winner of the game is the player with the most points.">Rules
+          </button>
+        </div>
+        <br><br>
+        <div aria-label="...">
+          <button type="button" id="reset" class="btn-lg btn-success">Reset</button>
+        </div>
+
+      </div> <!-- close row -->
+    </div> <!-- close container -->
+
+{% endblock %}
